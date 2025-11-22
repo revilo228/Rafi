@@ -3,17 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The 'Billionaire's Blueprint' - Unlock Your Potential for $37</title>
-    
-    <!-- Lucide Icons for placeholders -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Google Fonts (assuming standard nice fonts) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- MICROSOFT CLARITY SCRIPT (Cleaned) -->
+    <title>The 'Billionaire's Blueprint' - Unlock Your Potential</title>
+    <!--
+    =================================================
+    == MICROSOFT CLARITY SCRIPT ==
+    =================================================
+    -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -21,19 +16,21 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "u7qcnghg1s");
     </script>
-
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
         :root {
-            /* BRAND AURA THEME */
+            /* == BRAND AURA THEME == */
             --color-primary: #FF33A1; /* Magenta/Pink */
             --color-secondary: #FF9933; /* Orange */
-            --color-accent: #00E5E5; /* Cyan */
-
-            /* NEW PREMIUM DARK MODE PALETTE */
-            --color-dark: #242424; /* Section BG */
-            --color-gray: #2E2E2E; /* Card BG */
+            --color-accent: #00E5E5;   /* Cyan */
+            
+            /* == NEW PREMIUM DARK MODE PALETTE (USER'S CHOICE) == */
+            --color-dark: #242424;   /* Section BG */
+            --color-gray: #2E2E2E;   /* Card BG */
             --color-text: #ccc;
-            --gradient-bg: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
         }
 
         * {
@@ -48,8 +45,8 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background: #1B1B1B;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #1B1B1B; /* USER'S CHOICE */
             color: #fff;
             overflow-x: hidden;
             line-height: 1.6;
@@ -61,8 +58,12 @@
             margin: 0 auto;
             padding: 0 15px;
         }
-
-        /* Gradient Text */
+        
+        /* Gradient Background */
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+        }
+        
         .gradient-text {
             background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
             background-size: 200% 200%;
@@ -72,7 +73,7 @@
             animation: gradientMove 3s ease-in-out infinite;
         }
 
-        /* STICKY HEADER (THE HOOK) */
+        /* == 1. STICKY HEADER (THE HOOK) == */
         .sticky-header {
             background: var(--color-dark);
             color: #fff;
@@ -90,7 +91,7 @@
             color: var(--color-accent);
         }
 
-        /* HERO / VSL (THE CONVERSION ZONE) */
+        /* == 2. HERO / VSL (THE CONVERSION ZONE) == */
         .hero {
             padding: 4rem 0;
         }
@@ -118,7 +119,7 @@
 
         .vsl-placeholder {
             width: 100%;
-            aspect-ratio: 16/9;
+            aspect-ratio: 16 / 9;
             background: var(--color-gray);
             border-radius: 12px;
             display: flex;
@@ -128,18 +129,16 @@
             border: 2px solid var(--color-accent);
             cursor: pointer;
             position: relative;
-            overflow: hidden;
         }
-
+        
         .vsl-placeholder::before {
-            content: '▶'; /* Simple play icon fallback */
+            content: '▶';
             font-size: 3rem;
             color: var(--color-primary);
             opacity: 0.8;
             transition: all 0.3s ease;
-            z-index: 2;
         }
-
+        
         .vsl-placeholder:hover::before {
             opacity: 1;
             transform: scale(1.1);
@@ -150,10 +149,9 @@
             font-size: 0.9rem;
             font-weight: 600;
             color: var(--color-primary);
-            z-index: 2;
         }
-
-        /* CROWD PROOF (TRUST ANCHOR) */
+        
+        /* == CROWD PROOF (TRUST ANCHOR) == */
         .crowd-proof {
             background: var(--color-gray);
             border: 2px solid var(--color-accent);
@@ -162,18 +160,18 @@
             text-align: center;
             margin-top: 1.5rem;
         }
-
+        
         .crowd-proof p {
             font-size: 1.1rem;
             font-weight: 600;
             color: #fff;
         }
-
+        
         .crowd-proof .highlight {
             color: var(--color-accent);
         }
 
-        /* 2-STEP ORDER FORM (THE ACTION) */
+        /* == 2-STEP ORDER FORM (THE ACTION) == */
         .order-form {
             background: var(--color-gray);
             border-radius: 16px;
@@ -182,7 +180,7 @@
             position: sticky;
             top: 100px;
         }
-
+        
         .order-form h3 {
             font-size: 1.8rem;
             font-weight: 800;
@@ -198,7 +196,7 @@
             color: var(--color-accent);
             margin-bottom: 0.5rem;
         }
-
+        
         .order-form .price span {
             font-size: 1.5rem;
             text-decoration: line-through;
@@ -215,66 +213,49 @@
             text-align: center;
             margin-bottom: 1.5rem;
         }
-
+        
         .urgency-timer p {
             font-size: 0.9rem;
             font-weight: 600;
             margin-bottom: 0.25rem;
         }
-
+        
         #countdown {
             font-size: 1.3rem;
             font-weight: 700;
         }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 1rem;
-        }
-
-        .form-group label {
-            color: var(--color-primary);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .form-group input {
-            padding: 12px 15px;
-            border: 2px solid #333;
-            border-radius: 8px;
-            background: #2a2a2a;
-            color: #fff;
-            font-size: 1rem;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--color-primary);
-        }
-
-        .cta-button {
+        /* DIRECT CHECKOUT BUTTON */
+        .direct-checkout-btn {
             display: block;
             width: 100%;
             background: var(--gradient-bg);
             color: #fff;
-            padding: 16px;
+            padding: 18px;
             text-decoration: none;
             border-radius: 8px;
-            font-size: 1.2rem;
-            font-weight: 700;
+            font-size: 1.3rem;
+            font-weight: 800;
             transition: all 0.3s ease;
             text-transform: uppercase;
             text-align: center;
             border: none;
             cursor: pointer;
-            box-shadow: 0 6px 20px rgba(255, 51, 161, 0.3);
+            box-shadow: 0 6px 20px rgba(255, 51, 161, 0.4);
+            margin-top: 1.5rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .cta-button:hover {
+        .direct-checkout-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 51, 161, 0.4);
+            box-shadow: 0 10px 25px rgba(255, 51, 161, 0.6);
+        }
+        
+        .direct-checkout-btn::after {
+            content: '→';
+            margin-left: 10px;
+            font-weight: 900;
         }
 
         .guarantee-badge {
@@ -285,46 +266,40 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 5px;
+            gap: 8px;
         }
-
+        
         .guarantee-badge svg {
             width: 16px;
             height: 16px;
+            vertical-align: middle;
             color: var(--color-accent);
+            margin-right: 5px;
         }
 
-        /* Payment Step (Hidden by default) */
-        #payment-step {
-            display: none;
-        }
-
-        .payment-placeholder {
-            height: 150px;
-            background: #2a2a2a;
-            border: 2px dashed #444;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-            font-style: italic;
-        }
-
-        /* "US VS. THEM" (THE FRAME) */
+        /* == 3. "US VS. THEM" (THE FRAME) == */
         .us-vs-them {
             background: var(--color-dark);
             padding: 4rem 0;
             border-top: 1px solid #333;
         }
-
+        
         .section-title {
             font-size: clamp(1.8rem, 4vw, 3rem);
             font-weight: 800;
             margin-bottom: 2rem;
             text-align: center;
         }
-
+        
+        .section-title.gradient-text {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientMove 3s ease-in-out infinite;
+        }
+        
         .us-vs-them p {
             font-size: 1.2rem;
             color: var(--color-text);
@@ -333,12 +308,12 @@
             text-align: center;
             line-height: 1.7;
         }
-
+        
         .us-vs-them p strong {
             color: #fff;
         }
 
-        /* 3-Column Grid for Us vs. Them */
+        /* NEW: 3-Column Grid for Us vs. Them */
         .comparison-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -348,25 +323,25 @@
             margin-left: auto;
             margin-right: auto;
         }
-
+        
         .comparison-card {
             background: var(--color-gray);
             padding: 2rem;
             border-radius: 12px;
             border: 1px solid #333;
         }
-
+        
         .comparison-card h3 {
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
             color: #aaa;
         }
-
+        
         .comparison-card ul {
             list-style: none;
         }
-
+        
         .comparison-card li {
             font-size: 1rem;
             margin-bottom: 0.5rem;
@@ -374,15 +349,14 @@
             position: relative;
             padding-left: 30px;
         }
-
+        
         .comparison-card li::before {
-            content: '✗';
+            content: '❌';
             position: absolute;
             left: 0;
             font-size: 1.2rem;
-            color: #666;
         }
-
+        
         .comparison-card.us h3 {
             color: var(--color-primary);
         }
@@ -390,31 +364,31 @@
         .comparison-card.us li {
             color: #fff;
         }
-
+        
         .comparison-card.us {
             border: 2px solid var(--color-primary);
             box-shadow: 0 0 20px rgba(255, 51, 161, 0.3);
-            transform: scale(1.05); /* Slight pop */
         }
 
         .comparison-card.us li::before {
-            content: '✓';
+            content: '✅';
             color: var(--color-accent);
         }
 
-        /* MY STORY (THE RELATABILITY) */
+
+        /* == 4. MY STORY (THE RELATABILITY) == */
         .story-section {
             padding: 4rem 0;
             background: #1B1B1B; /* Match body */
         }
-
+        
         .story-grid {
             display: grid;
             grid-template-columns: 300px 1fr;
             gap: 2.5rem;
             align-items: center;
         }
-
+        
         .story-image-placeholder {
             width: 300px;
             height: 300px;
@@ -434,14 +408,14 @@
             height: 100%;
             object-fit: cover;
         }
-
+        
         .story-content h3 {
             font-size: 1.8rem;
             color: var(--color-accent);
             font-weight: 700;
             margin-bottom: 1rem;
         }
-
+        
         .story-content p {
             font-size: 1.1rem;
             color: var(--color-text);
@@ -449,12 +423,12 @@
             line-height: 1.7;
         }
 
-        /* OFFER STACK (THE VALUE) */
+        /* == 5. OFFER STACK (THE VALUE) == */
         .offer-stack-section {
             padding: 4rem 0;
             background: var(--color-dark);
         }
-
+        
         .offer-stack-section p.subtitle {
             text-align: center;
             font-size: 1.2rem;
@@ -479,15 +453,13 @@
             border-radius: 12px;
             border-left: 4px solid var(--color-primary);
         }
-
+        
         .offer-icon {
             font-size: 2rem;
             margin-right: 1.5rem;
             min-width: 50px;
             text-align: center;
             color: var(--color-accent);
-            display: flex;
-            justify-content: center;
         }
 
         .offer-content h3 {
@@ -497,11 +469,7 @@
             font-weight: 700;
         }
         
-        .offer-content p {
-            font-size: 0.95rem;
-            color: #ccc;
-        }
-
+        /* UPGRADED: Full gradient value badge */
         .value-badge {
             background: var(--gradient-bg);
             color: #fff;
@@ -510,31 +478,28 @@
             font-size: 0.8rem;
             font-weight: bold;
             display: inline-block;
-            margin-left: auto; /* Push to right */
+            margin-left: auto;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-            white-space: nowrap;
         }
-
+        
         .total-value {
             text-align: center;
             margin-top: 2rem;
             font-size: 1.5rem;
             font-weight: 700;
         }
-
+        
         .total-value span {
             text-decoration: line-through;
             color: #888;
             font-weight: 400;
         }
-
+        
         .total-value .final-price {
             font-size: 2.5rem;
             color: var(--color-accent);
-            text-decoration: none !important;
-            font-weight: 900;
         }
-
+        
         .final-cta-button {
             display: block;
             width: 100%;
@@ -555,12 +520,12 @@
             box-shadow: 0 6px 20px rgba(255, 51, 161, 0.3);
         }
 
-        /* GUARANTEE (RISK REVERSAL) */
+        /* == 6. GUARANTEE (RISK REVERSAL) == */
         .guarantee-section {
             padding: 4rem 0;
             background: #1B1B1B; /* Match body */
         }
-
+        
         .guarantee-box {
             background: var(--color-gray);
             border: 2px solid var(--color-accent);
@@ -570,20 +535,21 @@
             margin: 0 auto;
             text-align: center;
         }
-
+        
         .guarantee-box h2 {
             font-size: 2rem;
             font-weight: 800;
             color: var(--color-accent);
             margin-bottom: 1rem;
         }
-
+        
         .guarantee-box p {
             font-size: 1.1rem;
             color: var(--color-text);
             line-height: 1.7;
         }
-
+        
+        /* NEW: Guarantee Signature Block */
         .guarantee-signature {
             display: flex;
             align-items: center;
@@ -593,7 +559,7 @@
             border-top: 1px solid #333;
             padding-top: 2rem;
         }
-
+        
         .guarantee-photo {
             width: 100px;
             height: 100px;
@@ -613,33 +579,32 @@
             height: 100%;
             object-fit: cover;
         }
-
+        
         .guarantee-text {
             text-align: left;
             font-style: italic;
             color: #fff;
         }
-
+        
         .guarantee-text img {
             height: 40px;
             filter: invert(1);
             opacity: 0.8;
             margin-bottom: 0.5rem;
-            display: block;
         }
-
+        
         .guarantee-text p {
             font-size: 1.1rem;
             margin: 0;
             line-height: 1.4;
         }
-
+        
         .guarantee-text span {
             font-size: 0.9rem;
             color: var(--color-text);
         }
 
-        /* SOCIAL PROOF POPUP */
+        /* == NEW: SOCIAL PROOF POPUP == */
         .social-proof-popup {
             position: fixed;
             bottom: 20px;
@@ -653,10 +618,12 @@
             align-items: center;
             gap: 10px;
             z-index: 1001;
+            
             /* Start hidden and off-screen */
             opacity: 0;
             transform: translateY(20px);
             visibility: hidden;
+            
             transition: all 0.5s ease-in-out;
         }
 
@@ -677,38 +644,38 @@
             margin: 0;
             line-height: 1.3;
         }
-
+        
         .popup-text p strong {
             color: var(--color-accent);
         }
-
+        
         .popup-text span {
             font-size: 0.8rem;
             color: #aaa;
         }
 
-        /* RESPONSIVENESS */
+        /* == RESPONSIVENESS == */
         @media (max-width: 992px) {
             .hero-grid {
                 grid-template-columns: 1fr;
             }
-
+            
             .order-form {
                 position: static;
                 margin-top: 2.5rem;
             }
         }
-
+        
         @media (max-width: 768px) {
             .comparison-grid {
                 grid-template-columns: 1fr;
             }
-
+            
             .story-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-
+            
             .story-image-placeholder {
                 width: 200px;
                 height: 200px;
@@ -728,16 +695,14 @@
                 margin: 1rem auto 0 auto;
             }
         }
-
+        
         @media (max-width: 480px) {
             .hero-content h1 {
                 font-size: 2rem;
             }
-
             .hero-content h2 {
                 font-size: 1rem;
             }
-
             .order-form {
                 padding: 1.5rem;
             }
@@ -760,13 +725,13 @@
     <section class="hero" id="top">
         <div class="container">
             <div class="hero-grid">
+                
                 <!-- LEFT COLUMN: THE SELL -->
                 <div class="hero-content">
-                    <h1>Stop Guessing. Start Achieving*.</h1>
-                    
+                    <h1>Stop Guessing. Start *Achieving*.</h1>
                     <!-- UPDATED H2 - MORE SPECIFIC TO DATA -->
                     <h2>How To Use The 'Billionaire's Blueprint' (Vedic + Numerology) To Build Financial Freedom, Find Your Ideal Career, and Master Your Investments.</h2>
-
+                    
                     <!-- VSL PLACEHOLDER -->
                     <div class="vsl-placeholder" onclick="alert('Video player would go here!')">
                         <p>Watch This 5-Min VSL (Mandatory)</p>
@@ -774,65 +739,52 @@
 
                     <!-- CROWD PROOF (TRUST ANCHOR) -->
                     <div class="crowd-proof">
-                        <p>Join <span class="highlight">900+</span> Active Members & <span class="highlight">18,000+</span> Followers Who Get It.</p>
+                        <!-- UPDATED COPY PER REQUEST - 100% REAL RAP -->
+                        <p>Join <span class="highlight">18,000+</span> Followers Who Get It.</p>
                     </div>
                 </div>
-
+                
                 <!-- RIGHT COLUMN: THE ACTION (2-STEP FORM) -->
                 <div class="order-form">
                     <h3>Get Instant Access</h3>
-                    <div class="price"><span>£1,000+</span> $37</div>
-
+                    <!-- UPDATED PRICE ANCHOR -->
+                    <div class="price"><span>$200+</span> $37</div>
+                    
                     <!-- URGENCY TIMER -->
                     <div class="urgency-timer">
                         <p>Charter Member Rate Expires In:</p>
                         <div id="countdown">00:00:00</div>
                     </div>
-
-                    <!-- STEP 1: CONTACT INFO -->
-                    <div id="contact-step">
-                        <form onsubmit="return goToPayment();">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required placeholder="John Doe">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required placeholder="john@example.com">
-                            </div>
-                            <button type="submit" class="cta-button">Next: Payment</button>
-                        </form>
-                    </div>
-
-                    <!-- STEP 2: PAYMENT (Hidden) -->
-                    <div id="payment-step">
-                        <p style="text-align: center; margin-bottom: 1rem; color: #ccc;">Complete your secure purchase:</p>
-                        <!-- This is a placeholder for your Stripe/Payment Element -->
-                        <div class="payment-placeholder">
-                            [Stripe/Payment Element Here]
-                        </div>
-                        <button class="cta-button" style="margin-top: 1.5rem;" onclick="alert('Purchase complete!')">Pay $37</button>
-                        <a href="#" onclick="return goToContact();" style="color: #888; text-align: center; display: block; margin-top: 1rem; font-size: 0.9rem;">&laquo; Back to details</a>
-                    </div>
-
+                    
+                    <!-- 2-STEP FORM PLACEHOLDER - REPLACED BY DIRECT LINK -->
+                    <!-- WE ARE USING THE DIRECT LINK METHOD TO AVOID "SOMETHING WENT WRONG" -->
+                    <!-- THIS LINK GOES TO YOUR STRIPE CHECKOUT -->
+                    
+                    <a href="https://buy.stripe.com/test_aFa3cx1IaaoddJ7gxV2sM00" class="direct-checkout-btn" target="_blank">
+                        Unlock My Blueprint Now
+                    </a>
+                    
+                    <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888;">
+                        Secure checkout via Stripe. Instant access.
+                    </p>
+                    
                     <div class="guarantee-badge">
                         <i data-lucide="shield-check"></i>
-                        100% "No-BS" Money-Back Guarantee
+                        100% "No-BS" Satisfaction Guarantee
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- == 3. "US VS. THEM" (THE FRAME) == -->
     <section class="us-vs-them">
         <div class="container">
             <h2 class="section-title gradient-text">This Isn't Your Girlfriend's Astrology.</h2>
-            <p>I'm not the "crystal-loving, manifest-it" astrologer who tells you to "claim" energy from a Tik Tok video. That's a joke.</p>
-
+            <p>I'm not the "crystal-loving, manifest-it" astrologer who tells you to "claim" energy from a TikTok video. That's a joke.</p>
             <!-- UPDATED "US" STATEMENT - DATA-DRIVEN -->
             <p><strong>I am the guy who uses this system to make you money, to make you more efficient, to find your *purpose*, and to build your *financial freedom*.</strong> This is about real, tangible, strategic results.</p>
-
+            
             <div class="comparison-grid">
                 <div class="comparison-card">
                     <h3>The "Crystal Girl" Way</h3>
@@ -843,7 +795,7 @@
                         <li>Leaves you hopeful, but broke</li>
                     </ul>
                 </div>
-
+                
                 <!-- NEW "FINANCE BRO" COLUMN -->
                 <div class="comparison-card">
                     <h3>The "Finance Bro" Way</h3>
@@ -854,7 +806,7 @@
                         <li>Leaves you rich, but empty</li>
                     </ul>
                 </div>
-
+                
                 <div class="comparison-card us">
                     <h3>The "Billionaire's" Way</h3>
                     <!-- UPDATED BULLETS - DIRECTLY FROM YOUR POLLS -->
@@ -893,7 +845,7 @@
         <div class="container">
             <h2 class="section-title gradient-text">Here's What You Get For $37</h2>
             <p class="subtitle">You're not just "joining a Skool." You're getting the complete strategic blueprint for a fraction of the cost.</p>
-
+            
             <div class="offer-stack">
                 <div class="offer-item">
                     <div class="offer-icon">
@@ -905,18 +857,17 @@
                     </div>
                     <span class="value-badge">VALUE: £497</span>
                 </div>
-
                 <div class="offer-item">
                     <div class="offer-icon">
                          <i data-lucide="users"></i>
                     </div>
                     <div class="offer-content">
-                        <h3>Private Skool Community</h3>
-                        <p>Access to me and 900+ other high-performers.</p>
+                        <!-- UPDATED OFFER ITEM -->
+                        <h3>Private Community Access</h3>
+                        <p>Join the network of high-performers.</p>
                     </div>
                     <span class="value-badge">VALUE: £97/mo</span>
                 </div>
-
                 <div class="offer-item">
                     <div class="offer-icon">
                         <i data-lucide="video"></i>
@@ -927,7 +878,6 @@
                     </div>
                     <span class="value-badge">VALUE: £497/mo</span>
                 </div>
-
                 <div class="offer-item">
                     <div class="offer-icon">
                         <i data-lucide="library"></i>
@@ -939,23 +889,24 @@
                     <span class="value-badge">VALUE: £197</span>
                 </div>
             </div>
-
+            
             <div class="total-value">
                 <p>Total Value: <span>£1,000+</span></p>
                 <p>Get It All Today For <span class="final-price">$37</span></p>
             </div>
-
-            <a href="#top" class="final-cta-button">Join Now for $37</a>
+            
+            <!-- BOTTOM CTA - also updated to link -->
+            <a href="https://buy.stripe.com/test_aFa3cx1IaaoddJ7gxV2sM00" class="final-cta-button">Join Now for $37</a>
         </div>
     </section>
-
-    <!-- $==6$ GUARANTEE (RISK REVERSAL) == -->
+    
+    <!-- == 6. GUARANTEE (RISK REVERSAL) == -->
     <section class="guarantee-section">
         <div class="container">
             <div class="guarantee-box">
                 <h2 class="gradient-text">The "No-BS" Guarantee</h2>
                 <p>My reputation is on the line. If you join the Skool, go through the blueprint, and don't feel it's the single most actionable $37 you have *ever* spent on your future, I'll refund 100% of your money. No questions, no hassle.</p>
-
+                
                 <!-- NEW: Guarantee Signature Block -->
                 <div class="guarantee-signature">
                     <div class="guarantee-photo">
@@ -971,7 +922,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- == NEW: SOCIAL PROOF POPUP HTML == -->
     <div class="social-proof-popup" id="social-proof-popup">
         <div class="popup-icon">
@@ -987,26 +938,7 @@
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // === 2-STEP FORM LOGIC ===
-        function goToPayment() {
-            // Add validation here if needed
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            
-            if(!name || !email) return false;
-
-            document.getElementById('contact-step').style.display = 'none';
-            document.getElementById('payment-step').style.display = 'block';
-            return false; // Prevents form submission
-        }
-
-        function goToContact() {
-            document.getElementById('payment-step').style.display = 'none';
-            document.getElementById('contact-step').style.display = 'block';
-            return false;
-        }
-
-        // === 48-HOUR COUNTDOWN TIMER ===
+        // === 24-HOUR (23:59:59) COUNTDOWN TIMER ===
         function startTimer(duration, display) {
             let timer = duration, hours, minutes, seconds;
             setInterval(function () {
@@ -1023,14 +955,13 @@
                 if (--timer < 0) {
                     timer = 0;
                     display.textContent = "OFFER EXPIRED";
-                    // You could also hide the form or change the price here
                 }
             }, 1000);
         }
 
         window.onload = function () {
-            // Set timer to 48 hours (48 * 60 * 60 = 172800 seconds)
-            const fortyEightHours = 48 * 60 * 60;
+            // Set timer to 23 hours, 59 minutes, 59 seconds
+            const fortyEightHours = 86399; 
             const display = document.getElementById('countdown');
             startTimer(fortyEightHours, display);
         };
@@ -1056,8 +987,7 @@
 
             function showRandomPurchase() {
                 let randomIndex = Math.floor(Math.random() * purchases.length);
-
-                // Ensure we don't show the same one twice in a row
+                
                 if (randomIndex === lastIndex) {
                     randomIndex = (randomIndex + 1) % purchases.length;
                 }
@@ -1079,6 +1009,7 @@
                 }, 4000);
             }
 
+            // Start the loop
             // First popup after 7 seconds
             setTimeout(showRandomPurchase, 7000);
 
