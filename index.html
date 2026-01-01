@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The 'Billionaire's Blueprint' - Unlock Your Potential</title>
+    <meta name="description" content="The strategic system (Vedic + Numerology) to build financial freedom and find your purpose.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fast.wistia.com">
+
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -12,964 +17,586 @@
         })(window, document, "clarity", "script", "u7qcnghg1s");
     </script>
     
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <script src="https://fast.wistia.com/embed/medias/r2hk3qxvw9.jsonp" async></script>
-    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     
     <style>
         :root {
             /* == BRAND AURA THEME == */
             --color-primary: #FF33A1; /* Magenta/Pink */
             --color-secondary: #FF9933; /* Orange */
-            --color-accent: #00E5E5;   /* Cyan */
+            --color-accent: #00E5E5;    /* Cyan */
+            --color-dark: #0f0f0f;      /* Deepest Black */
+            --color-surface: #1a1a1a;   /* Card BG */
+            --color-text-main: #ffffff;
+            --color-text-muted: #a1a1a1;
             
-            /* == NEW PREMIUM DARK MODE PALETTE (USER'S CHOICE) == */
-            --color-dark: #242424;   /* Section BG */
-            --color-gray: #2E2E2E;   /* Card BG */
-            --color-text: #ccc;
+            --spacing-container: 1100px;
+            --radius-standard: 12px;
+            --shadow-glow: 0 0 30px rgba(255, 51, 161, 0.15);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* == RESET & BASE == */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 
-        html {
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
+        html { overflow-x: hidden; scroll-behavior: smooth; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background: #1B1B1B; /* USER'S CHOICE */
-            color: #fff;
-            overflow-x: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--color-dark);
+            color: var(--color-text-main);
             line-height: 1.6;
-            width: 100%;
+            overflow-x: hidden;
+            /* Premium Noise Texture */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
         }
 
         .container {
-            max-width: 1100px;
+            max-width: var(--spacing-container);
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
         }
         
-        /* Gradient Background */
-        .gradient-bg {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
-        }
-        
+        /* == UTILITIES == */
         .gradient-text {
             background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-            background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: gradientMove 3s ease-in-out infinite;
+            font-weight: 800;
         }
 
-        /* == 1. STICKY HEADER (THE HOOK) == */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* == 1. STICKY HEADER (Desktop Only) == */
         .sticky-header {
-            background: var(--color-dark);
-            color: #fff;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(10px);
             padding: 0.8rem 1rem;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 2px solid var(--color-primary);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: none; /* Hidden on mobile by default for screen space */
+        }
+        
+        @media (min-width: 768px) {
+            .sticky-header { display: block; }
         }
 
         .sticky-header h1 {
-            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-            font-weight: 700;
-            color: var(--color-accent);
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            font-weight: 500;
         }
+        .sticky-header h1 span { color: var(--color-accent); font-weight: 700; }
 
-        /* == 2. HERO / VSL (THE CONVERSION ZONE) == */
-        .hero {
-            padding: 4rem 0;
-        }
+        /* == 2. HERO SECTION == */
+        .hero { padding: 3rem 0 5rem 0; }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 420px;
-            gap: 2.5rem;
-            align-items: flex-start;
+            grid-template-columns: 1fr 400px; /* Video Left, Form Right */
+            gap: 3rem;
+            align-items: start;
         }
 
         .hero-content h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
             font-weight: 900;
-            line-height: 1.2;
-            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
         }
 
         .hero-content h2 {
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
-            color: var(--color-text);
-            font-weight: 300;
-            margin: 1.5rem 0;
-        }
-
-        /* Wistia Container Styling */
-        .wistia-container {
-            border: 2px solid var(--color-accent);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 0 30px rgba(0, 229, 229, 0.2);
-            margin-bottom: 1.5rem;
-        }
-        
-        /* == CROWD PROOF (TRUST ANCHOR) == */
-        .crowd-proof {
-            background: var(--color-gray);
-            border: 2px solid var(--color-accent);
-            padding: 1rem;
-            border-radius: 12px;
-            text-align: center;
-            margin-top: 1.5rem;
-        }
-        
-        .crowd-proof p {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #fff;
-        }
-        
-        .crowd-proof .highlight {
-            color: var(--color-accent);
-        }
-
-        /* == 2-STEP ORDER FORM (THE ACTION) == */
-        .order-form {
-            background: var(--color-gray);
-            border-radius: 16px;
-            border: 2px solid var(--color-primary);
-            padding: 2rem;
-            position: sticky;
-            top: 100px;
-        }
-        
-        .order-form h3 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #fff;
-            text-align: center;
-            margin-bottom: 0.5rem;
-        }
-
-        .order-form .price {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--color-accent);
-            margin-bottom: 0.5rem;
-        }
-        
-        .order-form .price span {
-            font-size: 1.5rem;
-            text-decoration: line-through;
-            color: #777;
-            margin-right: 0.5rem;
-        }
-
-        /* URGENCY TIMER */
-        .urgency-timer {
-            background: linear-gradient(135deg, #FF4444 0%, #CC0000 100%);
-            color: white;
-            padding: 0.8rem;
-            border-radius: 8px;
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .urgency-timer p {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-        
-        #countdown {
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-
-        /* DIRECT CHECKOUT BUTTON */
-        .direct-checkout-btn {
-            display: block;
-            width: 100%;
-            background: var(--gradient-bg);
-            color: #fff;
-            padding: 18px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.3rem;
-            font-weight: 800;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            text-align: center;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(255, 51, 161, 0.4);
-            margin-top: 1.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .direct-checkout-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(255, 51, 161, 0.6);
-        }
-        
-        .direct-checkout-btn::after {
-            content: '→';
-            margin-left: 10px;
-            font-weight: 900;
-        }
-
-        .guarantee-badge {
-            text-align: center;
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
-            color: #aaa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        
-        .guarantee-badge svg {
-            width: 16px;
-            height: 16px;
-            vertical-align: middle;
-            color: var(--color-accent);
-            margin-right: 5px;
-        }
-
-        /* == 3. "US VS. THEM" (THE FRAME) == */
-        .us-vs-them {
-            background: var(--color-dark);
-            padding: 4rem 0;
-            border-top: 1px solid #333;
-        }
-        
-        .section-title {
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            font-weight: 800;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        
-        .section-title.gradient-text {
-            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientMove 3s ease-in-out infinite;
-        }
-        
-        .us-vs-them p {
-            font-size: 1.2rem;
-            color: var(--color-text);
-            max-width: 800px;
-            margin: 0 auto 1.5rem auto;
-            text-align: center;
-            line-height: 1.7;
-        }
-        
-        .us-vs-them p strong {
-            color: #fff;
-        }
-
-        /* NEW: 3-Column Grid for Us vs. Them */
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 1.5rem;
-            margin-top: 3rem;
-            max-width: 1100px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .comparison-card {
-            background: var(--color-gray);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid #333;
-        }
-        
-        .comparison-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #aaa;
-        }
-        
-        .comparison-card ul {
-            list-style: none;
-        }
-        
-        .comparison-card li {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-            color: #aaa;
-            position: relative;
-            padding-left: 30px;
-        }
-        
-        .comparison-card li::before {
-            content: '❌';
-            position: absolute;
-            left: 0;
-            font-size: 1.2rem;
-        }
-        
-        .comparison-card.us h3 {
-            color: var(--color-primary);
-        }
-
-        .comparison-card.us li {
-            color: #fff;
-        }
-        
-        .comparison-card.us {
-            border: 2px solid var(--color-primary);
-            box-shadow: 0 0 20px rgba(255, 51, 161, 0.3);
-        }
-
-        .comparison-card.us li::before {
-            content: '✅';
-            color: var(--color-accent);
-        }
-
-
-        /* == 4. MY STORY (THE RELATABILITY) == */
-        .story-section {
-            padding: 4rem 0;
-            background: #1B1B1B; /* Match body */
-        }
-        
-        .story-grid {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 2.5rem;
-            align-items: center;
-        }
-        
-        .story-image-placeholder {
-            width: 300px;
-            height: 300px;
-            background: var(--color-gray);
-            border-radius: 50%;
-            border: 4px solid var(--color-accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: #888;
-            overflow: hidden;
-        }
-
-        .story-image-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .story-content h3 {
-            font-size: 1.8rem;
-            color: var(--color-accent);
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        
-        .story-content p {
-            font-size: 1.1rem;
-            color: var(--color-text);
-            margin-bottom: 1rem;
-            line-height: 1.7;
-        }
-
-        /* == 5. OFFER STACK (THE VALUE) == */
-        .offer-stack-section {
-            padding: 4rem 0;
-            background: var(--color-dark);
-        }
-        
-        .offer-stack-section p.subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--color-text);
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .offer-stack {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .offer-item {
-            display: flex;
-            align-items: center;
-            margin: 1rem 0;
-            padding: 1.5rem;
-            background: var(--color-gray);
-            border-radius: 12px;
-            border-left: 4px solid var(--color-primary);
-        }
-        
-        .offer-icon {
-            font-size: 2rem;
-            margin-right: 1.5rem;
-            min-width: 50px;
-            text-align: center;
-            color: var(--color-accent);
-        }
-
-        .offer-content h3 {
-            color: #fff;
-            margin-bottom: 0.3rem;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-        
-        /* UPGRADED: Full gradient value badge */
-        .value-badge {
-            background: var(--gradient-bg);
-            color: #fff;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-left: auto;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
-        
-        .total-value {
-            text-align: center;
-            margin-top: 2rem;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .total-value span {
-            text-decoration: line-through;
-            color: #888;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--color-text-muted);
             font-weight: 400;
-        }
-        
-        .total-value .final-price {
-            font-size: 2.5rem;
-            color: var(--color-accent);
-            text-decoration: none; /* == FIX: REMOVES STRIKETHROUGH == */
-            display: inline-block;
-        }
-        
-        .final-cta-button {
-            display: block;
-            width: 100%;
-            max-width: 400px;
-            margin: 2rem auto 0 auto;
-            background: var(--gradient-bg);
-            color: #fff;
-            padding: 16px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            text-align: center;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(255, 51, 161, 0.3);
+            margin-bottom: 2rem;
         }
 
-        /* == 6. GUARANTEE (RISK REVERSAL) == */
-        .guarantee-section {
-            padding: 4rem 0;
-            background: #1B1B1B; /* Match body */
-        }
-        
-        .guarantee-box {
-            background: var(--color-gray);
-            border: 2px solid var(--color-accent);
-            border-radius: 16px;
-            padding: 2.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .guarantee-box h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--color-accent);
-            margin-bottom: 1rem;
-        }
-        
-        .guarantee-box p {
-            font-size: 1.1rem;
-            color: var(--color-text);
-            line-height: 1.7;
-        }
-        
-        /* NEW: Guarantee Signature Block */
-        .guarantee-signature {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            border-top: 1px solid #333;
-            padding-top: 2rem;
-        }
-        
-        .guarantee-photo {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: var(--color-gray);
-            border: 2px solid var(--color-accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            color: #888;
+        /* == PERFORMANCE VIDEO WRAPPER (THE FACADE) == */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: var(--radius-standard);
+            border: 1px solid rgba(0, 229, 229, 0.3);
             overflow: hidden;
+            box-shadow: var(--shadow-glow);
+            aspect-ratio: 16 / 9;
+            background: #000;
+            cursor: pointer;
+            margin-bottom: 1.5rem;
         }
-        
-        .guarantee-photo img {
+
+        .video-poster {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-        
-        .guarantee-text {
-            text-align: left;
-            font-style: italic;
-            color: #fff;
-        }
-        
-        .guarantee-text img {
-            height: 40px;
-            filter: invert(1);
             opacity: 0.8;
-            margin-bottom: 0.5rem;
-        }
-        
-        .guarantee-text p {
-            font-size: 1.1rem;
-            margin: 0;
-            line-height: 1.4;
-        }
-        
-        .guarantee-text span {
-            font-size: 0.9rem;
-            color: var(--color-text);
+            transition: opacity 0.3s;
         }
 
-        /* == NEW: SOCIAL PROOF POPUP == */
-        .social-proof-popup {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: var(--color-gray);
-            border-radius: 8px;
-            border: 1px solid var(--color-primary);
-            padding: 1rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        .video-wrapper:hover .video-poster { opacity: 0.6; }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 51, 161, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease;
+            z-index: 2;
+        }
+
+        .video-wrapper:hover .play-button { transform: translate(-50%, -50%) scale(1.1); }
+        
+        .play-icon { width: 0; height: 0; border-left: 20px solid white; border-top: 12px solid transparent; border-bottom: 12px solid transparent; margin-left: 5px; }
+
+        /* Actual Iframe (Injected via JS) */
+        .video-iframe { width: 100%; height: 100%; position: absolute; top: 0; left: 0; border: none; }
+
+        /* == CROWD PROOF == */
+        .crowd-proof {
             display: flex;
             align-items: center;
             gap: 10px;
-            z-index: 1001;
-            
-            /* Start hidden and off-screen */
-            opacity: 0;
-            transform: translateY(20px);
-            visibility: hidden;
-            
-            transition: all 0.5s ease-in-out;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            color: var(--color-text-muted);
+        }
+        .crowd-proof span { color: var(--color-accent); }
+
+        /* == ORDER FORM CARD == */
+        .order-form {
+            background: var(--color-surface);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            position: sticky;
+            top: 80px; /* Space for header */
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
 
-        .social-proof-popup.show {
-            opacity: 1;
-            transform: translateY(0);
-            visibility: visible;
+        .price-display {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .price-display .old { font-size: 1.2rem; text-decoration: line-through; color: #666; margin-right: 10px; }
+        .price-display .new { font-size: 2.5rem; font-weight: 800; color: var(--color-text-main); }
+        
+        .timer-box {
+            background: rgba(255, 68, 68, 0.1);
+            border: 1px solid rgba(255, 68, 68, 0.3);
+            color: #ff6b6b;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-variant-numeric: tabular-nums;
         }
 
-        .popup-icon {
-            font-size: 1.5rem;
-            color: var(--color-accent);
+        /* PRIMARY CTA BUTTON (High Contrast) */
+        .btn-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background: linear-gradient(90deg, var(--color-primary), #D92685);
+            color: white;
+            padding: 18px 24px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(255, 51, 161, 0.4);
+            border: none;
+            cursor: pointer;
         }
 
-        .popup-text p {
-            font-size: 0.9rem;
-            color: #fff;
-            margin: 0;
-            line-height: 1.3;
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 51, 161, 0.6);
         }
         
-        .popup-text p strong {
-            color: var(--color-accent);
-        }
-        
-        .popup-text span {
+        .btn-primary:active { transform: translateY(0); }
+
+        .guarantee-tiny {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
             font-size: 0.8rem;
-            color: #aaa;
+            color: #888;
+            margin-top: 1rem;
+            cursor: default; /* Fixes Dead Click Issue */
         }
 
-        /* == RESPONSIVENESS == */
-        @media (max-width: 992px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .order-form {
-                position: static;
-                margin-top: 2.5rem;
-            }
+        /* == 3. COMPARISON SECTION == */
+        .section-std { padding: 5rem 0; border-top: 1px solid rgba(255,255,255,0.05); }
+        .text-center { text-align: center; }
+        .max-w-800 { max-width: 800px; margin: 0 auto; }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
         }
         
-        @media (max-width: 768px) {
-            .comparison-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .story-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .story-image-placeholder {
-                width: 200px;
-                height: 200px;
-                margin: 0 auto 1.5rem auto;
-            }
-            
-            .offer-item {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .offer-icon {
-                margin: 0 0 1rem 0;
-            }
-            
-            .value-badge {
-                margin: 1rem auto 0 auto;
-            }
+        .comp-card {
+            background: rgba(255,255,255,0.03);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
         }
         
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            .hero-content h2 {
-                font-size: 1rem;
-            }
-            .order-form {
-                padding: 1.5rem;
-            }
+        .comp-card h3 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--color-text-muted); }
+        .comp-card ul { list-style: none; }
+        .comp-card li { margin-bottom: 0.8rem; color: #888; font-size: 0.95rem; position: relative; padding-left: 25px; }
+        .comp-card li::before { content: '✕'; position: absolute; left: 0; color: #555; }
+        
+        /* Winning Card */
+        .comp-card.winner {
+            background: rgba(0, 229, 229, 0.05);
+            border: 1px solid var(--color-accent);
+            transform: scale(1.05);
+            z-index: 2;
+        }
+        .comp-card.winner h3 { color: var(--color-accent); font-weight: 700; }
+        .comp-card.winner li { color: #fff; }
+        .comp-card.winner li::before { content: '✓'; color: var(--color-accent); }
+
+        /* == 4. STORY SECTION == */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .profile-img {
+            width: 100%;
+            border-radius: 20px; /* Modern Soft Square */
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        @keyframes gradientMove {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+        /* == 5. OFFER STACK == */
+        .stack-item {
+            display: flex;
+            align-items: flex-start; /* Better for mobile text wrapping */
+            background: var(--color-surface);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--color-primary);
+        }
+        .stack-icon { 
+            color: var(--color-accent); 
+            margin-right: 1.5rem; 
+            margin-top: 5px; /* Visual alignment */
+        }
+        .value-tag {
+            background: #333;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-left: auto;
+            white-space: nowrap;
+        }
+
+        /* == SOCIAL POPUP == */
+        .toast-popup {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(30, 30, 30, 0.95);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 51, 161, 0.3);
+            border-radius: 8px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 2000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 300px;
+        }
+        .toast-popup.active { transform: translateY(0); opacity: 1; }
+        .toast-icon { color: var(--color-primary); }
+        .toast-content p { font-size: 0.85rem; line-height: 1.2; margin-bottom: 2px; }
+        .toast-content span { font-size: 0.75rem; color: #888; }
+
+        /* == MOBILE RESPONSIVENESS (CRITICAL) == */
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .hero-content { text-align: center; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .order-form { position: static; margin-top: 2rem; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .comp-card.winner { transform: scale(1); border-width: 2px; }
+            .story-grid { grid-template-columns: 1fr; text-align: center; }
+            .profile-img { max-width: 250px; margin: 0 auto; }
+            .stack-item { flex-direction: column; text-align: center; }
+            .stack-icon { margin: 0 0 1rem 0; }
+            .value-tag { margin: 1rem auto 0 auto; }
         }
     </style>
 </head>
-<body>
+<body id="top">
 
     <div class="sticky-header">
-        <h1>Tired of 'Crystal & Incense' Astrology? Get The System For Financial Freedom.</h1>
+        <h1>Tired of 'Crystal' Astrology? <span>Get The Financial System.</span></h1>
     </div>
 
-    <section class="hero" id="top">
-        <div class="container">
-            <div class="hero-grid">
-                
-                <div class="hero-content">
-                    <h1>Stop Guessing. Start *Achieving*.</h1>
-                    <h2>How To Use The 'Billionaire's Blueprint' (Vedic + Numerology) To Build Financial Freedom, Find Your Ideal Career, and Master Your Investments.</h2>
-                    
-                    <div class="wistia-container">
-                        <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
-                            <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
-                                <div class="wistia_embed wistia_async_r2hk3qxvw9 videoFoam=true" style="height:100%;position:relative;width:100%">
-                                    <div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
-                                        <img src="https://fast.wistia.com/embed/medias/r2hk3qxvw9/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="crowd-proof">
-                        <p>Join <span class="highlight">18,000+</span> Followers Who Get It.</p>
+    <section class="hero container">
+        <div class="hero-grid">
+            
+            <div class="hero-content fade-in-up" style="animation-delay: 0.1s;">
+                <h1>Stop Guessing.<br><span class="gradient-text">Start Achieving.</span></h1>
+                <h2>The "Billionaire's Blueprint" combines Vedic Astrology + Numerology to pinpoint your ideal career, investment timing, and purpose. No crystals. Just strategy.</h2>
+
+                <div class="video-wrapper" id="video-trigger">
+                    <img src="https://fast.wistia.com/embed/medias/r2hk3qxvw9/swatch" alt="Watch the Blueprint Strategy" class="video-poster">
+                    <div class="play-button">
+                        <div class="play-icon"></div>
                     </div>
                 </div>
-                
-                <div class="order-form">
-                    <h3>Get Instant Access</h3>
-                    <div class="price"><span>$200+</span> $28</div>
-                    
-                    <div class="urgency-timer">
-                        <p>Charter Member Rate Expires In:</p>
-                        <div id="countdown">00:00:00</div>
-                    </div>
-                    
-                    <a href="https://buy.stripe.com/4gMeVfa904GAcTE4zUasg01" class="direct-checkout-btn" target="_blank">
-                        Unlock My Blueprint Now
-                    </a>
-                    
-                    <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #888;">
-                        Secure checkout via Stripe. Instant access.
-                    </p>
-                    
-                    <div class="guarantee-badge">
-                        <i data-lucide="shield-check"></i>
-                        100% "No-BS" Satisfaction Guarantee
-                    </div>
+
+                <div class="crowd-proof">
+                    <i data-lucide="users" width="18"></i>
+                    <p>Joined by <span class="highlight">18,420+</span> High-Performers</p>
                 </div>
             </div>
+
+            <div class="order-form fade-in-up" style="animation-delay: 0.3s;">
+                <div class="price-display">
+                    <span class="old">$200+</span>
+                    <span class="new">$28</span>
+                </div>
+
+                <div class="timer-box">
+                    <span>Charter Rate Ends In: </span>
+                    <span id="countdown">23:59:59</span>
+                </div>
+
+                <a href="https://buy.stripe.com/4gMeVfa904GAcTE4zUasg01" class="btn-primary" target="_blank">
+                    Get Instant Access
+                    <i data-lucide="arrow-right" style="margin-left: 10px;" width="20"></i>
+                </a>
+                
+                <p style="text-align:center; font-size:0.8rem; color:#666; margin-top:1rem;">
+                    <i data-lucide="lock" width="12" style="display:inline; vertical-align:middle;"></i> Secure SSL Checkout via Stripe
+                </p>
+
+                <div class="guarantee-tiny">
+                    <i data-lucide="shield-check" width="16"></i>
+                    100% Satisfaction Guarantee
+                </div>
+            </div>
+
         </div>
     </section>
-    
-    <section class="us-vs-them">
+
+    <section class="section-std">
         <div class="container">
-            <h2 class="section-title gradient-text">This Isn't Your Girlfriend's Astrology.</h2>
-            <p>I'm not the "crystal-loving, manifest-it" astrologer who tells you to "claim" energy from a TikTok video. That's a joke.</p>
-            <p><strong>I am the guy who uses this system to make you money, to make you more efficient, to find your *purpose*, and to build your *financial freedom*.</strong> This is about real, tangible, strategic results.</p>
-            
+            <h2 class="section-title text-center gradient-text" style="font-size: 2.5rem; margin-bottom: 1rem;">Not Your Girlfriend's Astrology.</h2>
+            <p class="text-center max-w-800" style="color: var(--color-text-muted);">
+                I don't do "manifesting" vibes. I do <strong>strategic timing</strong>. This is about tangible, bankable results using ancient systems that billionaires secretly use.
+            </p>
+
             <div class="comparison-grid">
-                <div class="comparison-card">
-                    <h3>The "Crystal Girl" Way</h3>
+                <div class="comp-card">
+                    <h3>Crystal Astrology</h3>
                     <ul>
-                        <li>Vague "Sun Sign" nonsense</li>
-                        <li>Tells you to "manifest"</li>
-                        <li>Focuses on crystals & incense</li>
-                        <li>Leaves you hopeful, but broke</li>
+                        <li>Vague "Sun Sign" fluff</li>
+                        <li>"Manifesting" without action</li>
+                        <li>Leaves you hopeful but broke</li>
                     </ul>
                 </div>
-                
-                <div class="comparison-card">
-                    <h3>The "Finance Bro" Way</h3>
+                <div class="comp-card winner">
+                    <h3>The Blueprint</h3>
                     <ul>
-                        <li>"Soulless" spreadsheets</li>
-                        <li>Ignores intuition & timing</li>
-                        <li>Burns you out in 2 years</li>
-                        <li>Leaves you rich, but empty</li>
+                        <li>Specific Career Paths</li>
+                        <li>Investment Timing Windows</li>
+                        <li>Actionable Business Strategy</li>
+                        <li>Deep Psychological Profiling</li>
                     </ul>
                 </div>
-                
-                <div class="comparison-card us">
-                    <h3>The "Billionaire's" Way</h3>
+                <div class="comp-card">
+                    <h3>Finance Bros</h3>
                     <ul>
-                        <li>Find Your Perfect Career Path</li>
-                        <li>Master Investment Timing</li>
-                        <li>Build Your Purpose-Driven Business</li>
-                        <li>Achieve *True* Financial Freedom</li>
+                        <li>Soulless spreadsheets</li>
+                        <li>Ignores intuition/luck</li>
+                        <li>High burnout rate</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="story-section">
-        <div class="container">
-            <div class="story-grid">
-                <div class="story-image-placeholder">
-                    <img src="https://placehold.co/400x400/2E2E2E/ffffff?text=Your+Photo&font=roboto" alt="Profile Photo">
-                </div>
-                <div class="story-content">
-                    <h3 class="gradient-text">I'm Not Supposed To Be Here.</h3>
-                    <p>I'm just a normal guy from London. Divorced parents, bottom set at school, uni dropout. The "system" wrote me off.</p>
-                    <p>But while everyone else was following the "safe" path, I was reverse-engineering the path of billionaires. And I found the one thing they *all* used: a strategic understanding of *timing* and *potential*.</p>
-                    <p>This isn't a "gift." It's a system. I used it to build my audience, my business, and my life. Now I'm giving you the keys. I'm not "gifted" - I just have the right map. This is that map.</p>
-                </div>
+    <section class="section-std" style="background: rgba(255,255,255,0.02);">
+        <div class="container story-grid">
+            <div class="story-img-wrapper">
+                <img src="YOUR_IMAGE_LINK_HERE.jpg" alt="Rafi Profile" class="profile-img">
+            </div>
+            <div class="story-content">
+                <h3 class="gradient-text" style="font-size: 2rem; margin-bottom: 1rem;">I Hacked The System.</h3>
+                <p style="margin-bottom: 1rem; color: #ccc;">I was a university dropout in London. The "system" wrote me off. While my friends took safe corporate jobs, I reverse-engineered the habits of the ultra-wealthy.</p>
+                <p style="color: #ccc;">I found that the top 1% don't rely on luck. They rely on <strong>timing</strong>. I used this exact system to build my business and audience. Now, I'm handing you the map.</p>
             </div>
         </div>
     </section>
 
-    <section class="offer-stack-section">
-        <div class="container">
-            <h2 class="section-title gradient-text">Here's What You Get For $28</h2>
-            <p class="subtitle">You're not just "joining a Skool." You're getting the complete strategic blueprint for a fraction of the cost.</p>
+    <section class="section-std">
+        <div class="container max-w-800">
+            <h2 class="text-center" style="font-size: 2rem; margin-bottom: 2rem;">What You Get For <span style="color:var(--color-primary)">$28</span></h2>
             
-            <div class="offer-stack">
-                <div class="offer-item">
-                    <div class="offer-icon">
-                        <i data-lucide="map"></i>
-                    </div>
-                    <div class="offer-content">
-                        <h3>The "Billionaire's Blueprint" Course</h3>
-                        <p>The core system (Vedic + Numerology) to find your "WHY".</p>
-                    </div>
-                    <span class="value-badge">VALUE: £497</span>
+            <div class="stack-item">
+                <div class="stack-icon"><i data-lucide="map" width="32" height="32"></i></div>
+                <div>
+                    <h3 style="font-size:1.2rem; font-weight:700; color:#fff;">The "Billionaire's Blueprint" Course</h3>
+                    <p style="font-size:0.95rem; color:#aaa;">The core video curriculum (Vedic + Numerology).</p>
                 </div>
-                <div class="offer-item">
-                    <div class="offer-icon">
-                         <i data-lucide="users"></i>
-                    </div>
-                    <div class="offer-content">
-                        <h3>Private Community Access</h3>
-                        <p>Join the network of high-performers.</p>
-                    </div>
-                    <span class="value-badge">VALUE: £97/mo</span>
-                </div>
-                <div class="offer-item">
-                    <div class="offer-icon">
-                        <i data-lucide="video"></i>
-                    </div>
-                    <div class="offer-content">
-                        <h3>Weekly Live Q&A Calls</h3>
-                        <p>Get your personal questions answered by me. Live.</p>
-                    </div>
-                    <span class="value-badge">VALUE: £497/mo</span>
-                </div>
-                <div class="offer-item">
-                    <div class="offer-icon">
-                        <i data-lucide="library"></i>
-                    </div>
-                    <div class="offer-content">
-                        <h3>Toolkit & Resource Library</h3>
-                        <p>My personal templates, checklists, and tools.</p>
-                    </div>
-                    <span class="value-badge">VALUE: £197</span>
-                </div>
+                <div class="value-tag">Value: £497</div>
             </div>
-            
-            <div class="total-value">
-                <p>Total Value: <span>£1,000+</span></p>
-                <p>Get It All Today For <span class="final-price">$28</span></p>
-            </div>
-            
-            <a href="https://buy.stripe.com/test_aFa00lcmO1RHdJ7ftR2sM05" class="final-cta-button">Join Now for $28</a>
-        </div>
-    </section>
-    
-    <section class="guarantee-section">
-        <div class="container">
-            <div class="guarantee-box">
-                <h2 class="gradient-text">The "No-BS" Guarantee</h2>
-                <p>My reputation is on the line. If you join the Skool, go through the blueprint, and don't feel it's the single most actionable $28 you have *ever* spent on your future, I'll refund 100% of your money. No questions, no hassle.</p>
-                
-                <div class="guarantee-signature">
-                    <div class="guarantee-photo">
-                         <img src="https://placehold.co/200x200/2E2E2E/ffffff?text=Rafi&font=roboto" alt="Rafi Photo">
-                    </div>
-                    <div class="guarantee-text">
-                        <img src="https://placehold.co/200x60/2E2E2E/ffffff?text=Rafi&font=cursive" alt="Rafi Signature">
-                        <p>Rafi</p>
-                        <span>Creator, 'Billionaire's Blueprint'</span>
-                    </div>
+
+            <div class="stack-item">
+                <div class="stack-icon"><i data-lucide="users" width="32" height="32"></i></div>
+                <div>
+                    <h3 style="font-size:1.2rem; font-weight:700; color:#fff;">Private Community</h3>
+                    <p style="font-size:0.95rem; color:#aaa;">Network with other high-performers.</p>
                 </div>
+                <div class="value-tag">Value: £97/mo</div>
+            </div>
+
+            <div class="stack-item">
+                <div class="stack-icon"><i data-lucide="video" width="32" height="32"></i></div>
+                <div>
+                    <h3 style="font-size:1.2rem; font-weight:700; color:#fff;">Weekly Live Q&A</h3>
+                    <p style="font-size:0.95rem; color:#aaa;">Direct access to me to ask questions.</p>
+                </div>
+                <div class="value-tag">Value: £497/mo</div>
+            </div>
+
+            <div class="text-center" style="margin-top: 3rem;">
+                <p style="font-size: 1.5rem; margin-bottom: 1rem;">Total Value: <span style="text-decoration: line-through; color: #666;">£1,000+</span></p>
+                <a href="https://buy.stripe.com/test_aFa00lcmO1RHdJ7ftR2sM05" class="btn-primary" style="max-width: 400px; margin: 0 auto;">
+                    Join Now For $28
+                </a>
             </div>
         </div>
     </section>
-    
-    <div class="social-proof-popup" id="social-proof-popup">
-        <div class="popup-icon">
-            <i data-lucide="bell"></i>
-        </div>
-        <div class="popup-text" id="popup-text">
-            <p><strong>Someone</strong> from <strong>somewhere</strong> just joined!</p>
-            <span>a moment ago</span>
+
+    <div class="toast-popup" id="toast">
+        <div class="toast-icon"><i data-lucide="bell-ring"></i></div>
+        <div class="toast-content" id="toast-msg">
+            <p><strong>Alex</strong> from London just joined!</p>
+            <span>2 minutes ago</span>
         </div>
     </div>
 
     <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-
-        // === 24-HOUR (23:59:59) COUNTDOWN TIMER ===
-        function startTimer(duration, display) {
-            let timer = duration, hours, minutes, seconds;
-            setInterval(function () {
-                hours = parseInt(timer / 3600, 10);
-                minutes = parseInt((timer % 3600) / 60, 10);
-                seconds = parseInt(timer % 60, 10);
-
-                hours = hours < 10 ? "0" + hours : hours;
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                display.textContent = hours + ":" + minutes + ":" + seconds;
-
-                if (--timer < 0) {
-                    timer = 0;
-                    display.textContent = "OFFER EXPIRED";
-                }
-            }, 1000);
-        }
-
-        window.onload = function () {
-            // Set timer to 23 hours, 59 minutes, 59 seconds
-            const fortyEightHours = 86399; 
-            const display = document.getElementById('countdown');
-            startTimer(fortyEightHours, display);
-        };
-
-        // === NEW: SOCIAL PROOF POPUP LOGIC ===
-        (function() {
-            const purchases = [
-                { name: 'Jean', location: 'France' },
-                { name: 'Paul', location: 'England' },
-                { name: 'Mike', location: 'New York' },
-                { name: 'Sarah', location: 'London' },
-                { name: 'Alex', location: 'Germany' },
-                { name: 'David', location: 'Manchester' },
-                { name: 'Fatima', location: 'Dubai' },
-                { name: 'Chris', location: 'Australia' },
-                { name: 'Daniel', location: 'Canada' },
-                { name: 'Liam', location: 'Ireland' }
-            ];
-
-            const popup = document.getElementById('social-proof-popup');
-            const popupText = document.getElementById('popup-text');
-            let lastIndex = -1;
-
-            function showRandomPurchase() {
-                let randomIndex = Math.floor(Math.random() * purchases.length);
-                
-                if (randomIndex === lastIndex) {
-                    randomIndex = (randomIndex + 1) % purchases.length;
-                }
-                lastIndex = randomIndex;
-
-                const purchase = purchases[randomIndex];
-                const timeAgo = Math.floor(Math.random() * 10) + 1; // 1-10 minutes ago
-
-                popupText.innerHTML = `
-                    <p><strong>${purchase.name}</strong> from <strong>${purchase.location}</strong> just joined!</p>
-                    <span>${timeAgo} minutes ago</span>
-                `;
-
-                popup.classList.add('show');
-
-                // Hide the popup after 4 seconds
-                setTimeout(() => {
-                    popup.classList.remove('show');
-                }, 4000);
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Initialize Icons safely
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            } else {
+                // Fallback if script loads late
+                window.onload = function() { lucide.createIcons(); };
             }
 
-            // Start the loop
-            // First popup after 7 seconds
-            setTimeout(showRandomPurchase, 7000);
+            // 2. Performance Video Loader (The Facade)
+            const videoTrigger = document.getElementById('video-trigger');
+            if(videoTrigger) {
+                videoTrigger.addEventListener('click', function() {
+                    // Create Iframe on the fly
+                    const iframe = document.createElement('iframe');
+                    iframe.src = "https://fast.wistia.net/embed/iframe/r2hk3qxvw9?videoFoam=true&autoPlay=true";
+                    iframe.title = "Wistia Video Player";
+                    iframe.allow = "autoplay; fullscreen";
+                    iframe.className = "video-iframe";
+                    
+                    // Add external Wistia script only when needed
+                    const script = document.createElement('script');
+                    script.src = "https://fast.wistia.com/assets/external/E-v1.js";
+                    script.async = true;
+                    document.body.appendChild(script);
 
-            // Subsequent popups every 12 seconds
-            setInterval(showRandomPurchase, 12000);
-        })();
+                    // clear content and append iframe
+                    this.innerHTML = ''; 
+                    this.appendChild(iframe);
+                });
+            }
+
+            // 3. Countdown Timer (24h loop)
+            const display = document.getElementById('countdown');
+            let timer = 86399; // 23:59:59
+            
+            const tick = () => {
+                let h = Math.floor(timer / 3600);
+                let m = Math.floor((timer % 3600) / 60);
+                let s = Math.floor(timer % 60);
+                
+                h = h < 10 ? "0" + h : h;
+                m = m < 10 ? "0" + m : m;
+                s = s < 10 ? "0" + s : s;
+                
+                if(display) display.textContent = `${h}:${m}:${s}`;
+                if (--timer < 0) timer = 86399;
+            };
+            setInterval(tick, 1000);
+
+            // 4. Social Proof Popup
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            const names = [
+                {n:'Sarah', l:'London'}, {n:'Mike', l:'New York'}, {n:'Jean', l:'Paris'},
+                {n:'David', l:'Austin'}, {n:'Ali', l:'Dubai'}, {n:'James', l:'Toronto'}
+            ];
+
+            const showToast = () => {
+                if(!toast || !toastMsg) return;
+                const r = names[Math.floor(Math.random() * names.length)];
+                const time = Math.floor(Math.random() * 9) + 1;
+                
+                toastMsg.innerHTML = `<p><strong>${r.n}</strong> from <strong>${r.l}</strong> just joined!</p><span>${time} minutes ago</span>`;
+                toast.classList.add('active');
+                
+                setTimeout(() => {
+                    toast.classList.remove('active');
+                }, 4000);
+            };
+
+            // First show after 5s, then every 15s
+            setTimeout(showToast, 5000);
+            setInterval(showToast, 15000);
+        });
     </script>
 </body>
 </html>
-
